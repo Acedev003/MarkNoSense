@@ -1,3 +1,5 @@
 bin
 build
 .vscode
+dataset/data.txt
+dataset/abcnews-date-text.csv
