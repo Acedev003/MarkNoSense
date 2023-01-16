@@ -1,3 +1,13 @@
+'''
+
+Download abcnews-date-text.csv from 
+https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SYBGZL into the dataset folder
+
+run this python script as 
+
+> python dataset_conv.py abcnews-date-text.csv data.txt
+
+'''
 import sys
 import pandas as pd
 
