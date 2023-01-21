@@ -1,5 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <vector>
+
 #include "markov.hpp"
 
 bool Markov::load_data()
@@ -16,7 +19,27 @@ bool Markov::train(const std::string& dataset_path)
         return false;
     }
 
-        
+    std::string buffer;
+    while(std::getline(file,buffer))
+    {
+        std::stringstream ss(buffer);
+        std::string token;
+        std::string prev = "";
+        while(std::getline(ss,token,' '))
+        {
+            if(prev == "")
+            {
+                prev = token;
+                continue;
+            }
+            else
+            {
+                std::cout<<prev<<" "<<token<<"\n";
+                prev = token;
+            }
+        }
+        std::cout<<"\n";
+    }
 
     return true;
 }
